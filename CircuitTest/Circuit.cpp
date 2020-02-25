@@ -18,28 +18,30 @@ Circuit::Circuit() {
 		_firstBranch[i] = 0;
 		_secondBranch[i] = 0;
 	}
-	cout << "Created an empty circuit:" << endl;
+	_resistance = 0;
+	cout << "Created an empty circuit:";
 	printCircuit();
+	cout << endl;
 }
 
 /// <summary>
 /// instantiate a Circuit with the passed elements in two opposite orders.
 /// </summary>
-Circuit::Circuit(int elt1, int elt2, int elt3) {
+Circuit::Circuit(int resistance) {
 	
 	_firstBranch = new int[3];
 	_secondBranch = new int[3];
 
-	_firstBranch[0] = elt1;
-	_firstBranch[1] = elt2;
-	_firstBranch[2] = elt3;
+	for (int i = 0; i < 3; i++) {
+		_firstBranch[i] = i + 1;
+		_secondBranch[i] = i + 1;
+	}
 
-	_secondBranch[0] = elt3;
-	_secondBranch[1] = elt2;
-	_secondBranch[2] = elt1;
+	_resistance = resistance;
 
-	cout << "Created a circuit:" << endl;
+	cout << "Created a circuit:";
 	printCircuit();
+	cout << endl;
 }
 
 /// <summary>
@@ -49,7 +51,7 @@ Circuit::~Circuit() {
 	
 	delete[] _firstBranch;
 	delete[] _secondBranch;
-	cout << "destroyed a Circuit." << endl;
+	cout << "Destroyed a Circuit." << endl;
 }
 
 /// <summary>
@@ -79,14 +81,5 @@ void Circuit::intToSymbol(int value) {
 /// pretty prints the circuit
 /// </summary>
 void Circuit::printCircuit() {
-	for (int i = 0; i < 3; i++) {
-		intToSymbol(_firstBranch[i]);
-		cout << "///";
-	}
-	cout << endl;
-	for (int i = 0; i < 3; i++) {
-		intToSymbol(_secondBranch[i]);
-		cout << "///";
-	}
-	cout << endl;
+	cout << "~[" << _resistance << "]~";
 }

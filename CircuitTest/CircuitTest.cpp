@@ -8,12 +8,16 @@ v1.0 2/20/2020
 */
 
 #include <iostream>
-#include"Circuit.h"
+#include "Circuit.h"
+#include "ParrallelCircuit.h"
+#include "SeriesCircuit.h"
 
 using namespace std;
 
 int main()
 {
-    // instance of Circuit
-    Circuit genResLamp = Circuit();
+    // instance of Parrallel Circuit
+    ParrallelCircuit test(6);
+    // instance of Series Circuit
+    SeriesCircuit test2(9);
 }

@@ -5,19 +5,21 @@ using namespace std;
 
 class Circuit
 {
-private:
+protected:
 	int* _firstBranch;
 	int* _secondBranch;
+private:
+	int _resistance;
 public:
 	// constructors
 	Circuit();
-	Circuit(int elt1, int elt2, int elt3);
+	Circuit(int resistance);
 	
 	// destructor
 	~Circuit();
 
 	// member function
 	void printCircuit();
-	void intToSymbol(int value);
+	virtual void intToSymbol(int value);
 };
 

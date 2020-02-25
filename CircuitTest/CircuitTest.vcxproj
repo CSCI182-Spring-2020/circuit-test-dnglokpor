@@ -149,9 +149,13 @@
   <ItemGroup>
     <ClCompile Include="Circuit.cpp" />
     <ClCompile Include="CircuitTest.cpp" />
+    <ClCompile Include="ParrallelCircuit.cpp" />
+    <ClCompile Include="SeriesCircuit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circuit.h" />
+    <ClInclude Include="ParrallelCircuit.h" />
+    <ClInclude Include="SeriesCircuit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
