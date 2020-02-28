@@ -83,3 +83,17 @@ void Circuit::intToSymbol(int value) {
 void Circuit::printCircuit() {
 	cout << "~[" << _resistance << "]~";
 }
+
+// Copy constructor
+Circuit::Circuit(const Circuit& oldCircuit) {
+	
+	_firstBranch = new int[3];
+	_secondBranch = new int[3];
+
+	for (int i = 0; i < 3; i++) {
+		_firstBranch[i] = oldCircuit._firstBranch[i];
+		_secondBranch[i] = oldCircuit._secondBranch[i];
+	}
+
+	_resistance = oldCircuit._resistance;
+}

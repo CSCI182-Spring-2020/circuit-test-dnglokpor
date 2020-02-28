@@ -16,8 +16,10 @@ using namespace std;
 
 int main()
 {
-    // instance of Parrallel Circuit
-    ParrallelCircuit test(6);
-    // instance of Series Circuit
-    SeriesCircuit test2(9);
+    SeriesCircuit circuit(9);
+    SeriesCircuit copyCircuit(circuit);
+    
+    cout << "printing the copy" << endl;
+    copyCircuit.printCircuit();
+    
 }

@@ -21,5 +21,10 @@ public:
 	// member function
 	void printCircuit();
 	virtual void intToSymbol(int value);
+	/// <summary>
+	/// Copy constructor
+	/// </summary>
+	/// <param name="oldCircuit"></param>
+	Circuit(const Circuit& oldCircuit);
 };
 
